@@ -17,7 +17,7 @@ APP_BASE_URL = getenv("URL")
 async def on_startup(bot: Bot, base_url: str):
     await bot.set_webhook(f"{base_url}/webhook")
     await bot.set_chat_menu_button(
-        menu_button=MenuButtonWebApp(text="Open Menu", web_app=WebAppInfo(url=f"{base_url}/public/src"))
+        menu_button=MenuButtonWebApp(text="Open Menu", web_app=WebAppInfo(url=f"{base_url}/src"))
     )
 
 
