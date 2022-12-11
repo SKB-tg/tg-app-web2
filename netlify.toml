@@ -3,7 +3,7 @@
   command = "echo  'python public/server.py'"
 
 [build.environment]
-  BASE_URL = Url
+  BASE_URL = "URL"
   PYTHON_VERSION = 3.9
 
 [[redirects]]
