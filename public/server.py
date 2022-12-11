@@ -33,8 +33,8 @@ def main():
     app["bot"] = bot
 
     app.router.add_get("/src", demo_handler)
-    app.router.add_post("/src/checkData", check_data_handler)
-    app.router.add_post("/src/sendMessage", send_message_handler)
+    app.router.add_post("", check_data_handler)    #/src/checkData
+    app.router.add_post("", send_message_handler)                #/src/sendMessage
     SimpleRequestHandler(
         dispatcher=dispatcher,
         bot=bot,
