@@ -1,0 +1,12 @@
+
+[build]
+  command = "echo  'python public/server.py'"
+
+[build.environment]
+  BASE_URL = URL
+  PYTHON_VERSION = 3.9
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
