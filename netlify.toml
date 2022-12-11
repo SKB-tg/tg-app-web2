@@ -2,8 +2,6 @@
 [build]
   command = "echo  'python server.py'"
 
-[build.environment]
-  PYTHON_VERSION = 3.9
 
 [[redirects]]
   from = "/*"
