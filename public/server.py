@@ -11,7 +11,7 @@ from aiogram.types import MenuButtonWebApp, WebAppInfo
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 
 TELEGRAM_TOKEN = "1699887557:AAGvYsHg0IjLplNPmWiBRwbWfQrXVIRzZmU"#getenv("1699887557:AAGvYsHg0IjLplNPmWiBRwbWfQrXVIRzZmU")
-APP_BASE_URL = getenv("BASE_URL")
+APP_BASE_URL = getenv("URL")
 
 
 async def on_startup(bot: Bot, base_url: str):
