@@ -1,5 +1,7 @@
 import logging
 from os import getenv
+import requests
+
 
 from aiohttp.web import run_app
 from aiohttp.web_app import Application
@@ -44,8 +46,9 @@ def main():
     ).register(app, path="/webhook")
     setup_application(app, dispatcher, bot=bot)
 
-    run_app(app, host="127.0.0.1", port=8081)
+    requests.get('https://api.telegram.org/bot5822305353:AAHexHNC9TLD1HZvZGcMg4C19hGnVGLyr6M/sendmessage?chat_id='+str(5146071572)+'&text=webhook.')
 
+    run_app(app, host="127.0.0.1", port=8081)
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
