@@ -4,14 +4,17 @@ from os import getenv
 from aiohttp.web import run_app
 from aiohttp.web_app import Application
 from src.handlers import my_router
-from src.routes import check_data_handler, demo_handler, send_message_handler
+from src.routes import demo_handler
+from src.sendMessage.sendMessage import send_message_handler
+from src.checkData.checkData import check_data_handler
+
 
 from aiogram import Bot, Dispatcher
 from aiogram.types import MenuButtonWebApp, WebAppInfo
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 
 TELEGRAM_TOKEN = "1699887557:AAGvYsHg0IjLplNPmWiBRwbWfQrXVIRzZmU"#getenv("1699887557:AAGvYsHg0IjLplNPmWiBRwbWfQrXVIRzZmU")
-APP_BASE_URL = getenv("URL")
+APP_BASE_URL = "https://classy-pixie-efeff1.netlify.app" #getenv("URL")
 
 
 async def on_startup(bot: Bot, base_url: str):
@@ -32,9 +35,9 @@ def main():
     app = Application()
     app["bot"] = bot
 
-    app.router.add_get("/src", demo_handler)
-    app.router.add_post("", check_data_handler)    #/src/checkData
-    app.router.add_post("", send_message_handler)                #/src/sendMessage
+    app.router.add_get("", demo_handler)
+    app.router.add_post("/src/checkData", check_data_handler)#/src/checkData
+    app.router.add_post("/src/sendMessage", send_message_handler)#/src/sendMessage
     SimpleRequestHandler(
         dispatcher=dispatcher,
         bot=bot,
